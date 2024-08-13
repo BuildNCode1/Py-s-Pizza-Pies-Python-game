@@ -1,0 +1,47 @@
+import time
+import random
+stars = 5
+dough = ["High Rise", "Normal", "Sourdough", "Gluten Free", "Keto"]
+sauce = ["Alfredo", "Spicy Red", "White", "Pesto"]
+cheese = ["American", "Feta", "Mozzerella", "Goat", "Bleu", "Pepper Jack"]
+toppings = ["Pepperoni", "Anchovies", "Olives","Peppers","Ham","Sausage","Meatball","Mystery Meat","Pineapple","More cheese" ]
+for i in range ():
+    if stars == 0:
+        print ("Py's Pizza Pies™️ went out of buisiness.😭")
+        break
+def get_order():
+    odough =random.choice(dough)
+    osauce =random.choice(sauce)
+    ocheese =random.choice(cheese)
+    otoppings = random.choice(toppings)
+    print("\n\nOrder up!\nDough: " + random.choice(odough) +"\nSauce: "+ random.choice(osauce) +"\nCheese: "+ random.choice(ocheese) +"\nToppings: "+ random.choice (otoppings) + "\n")
+    order = [odough,osauce,ocheese,otoppings]
+    o = input()
+    if o == order:
+        print ("Correct order! +🌟!")
+        stars = stars + 1
+        print ("You have " + str(stars) + " stars!")
+    else:
+        print ("Incorrect order. -🌟!")
+        stars = stars - 1
+        print ("You have " + str(stars) + " stars.")
+def tut():
+    print("You'll have 1 minute to complete the pizza correctly.\nIf the pizza is incorrect, we will lose a star.\nMake it correcly, and we gain a star!\nWe are currently at 5 stars.\n Fill out the order by typing the ingredients.")
+    time.sleep(15)
+    print("Every time someone orders a pizza, an order form will come in, like this!")
+    get_order()
+    time.sleep(5)
+    print ("Now that you've read the order, make the pizza!")
+print("Hello, and welcome to Py's Pizza Pies™️!")
+input("Wait. Aren't you the new chef?\n")
+print("You are? Then what are you doing out here in the back of the pizzaria?")
+time.sleep(2)
+print("Come on, we gotta get you into the kitchen!\n(Running noises)")
+for i in range (random.randint(4,7)):
+    print("Loading...")
+    time.sleep(1)
+print("Alright, here we are. The kitchen.")
+time.sleep(2)
+tutorial = input ("Do you want me to teach you the ropes?")
+if tutorial == "y" or "yes" or "ok":
+    tut()
