@@ -1,22 +1,77 @@
 import time
 import random
-stars = 5
+starss = 5
 dough = ["High Rise", "Normal", "Sourdough", "Gluten Free", "Keto"]
 sauce = ["Alfredo", "Spicy Red", "White", "Pesto"]
 cheese = ["American", "Feta", "Mozzerella", "Goat", "Bleu", "Pepper Jack"]
 toppings = ["Pepperoni", "Anchovies", "Olives","Peppers","Ham","Sausage","Meatball","Mystery Meat","Pineapple","More cheese" ]
 def get_order():
-    stars= stars
-    print (stars)
-    odough =random.choice(dough)
-    osauce =random.choice(sauce)
-    ocheese =random.choice(cheese)
-    otoppings = random.choice(toppings)
-    print("\n\nOrder up!\nDough: " + odough +"\nSauce: "+ osauce +"\nCheese: "+ ocheese +"\nToppings: "+ otoppings + "\n")
-    order = odough,osauce,ocheese,otoppings
-    print (order)
-    o = input()
-    if set(o) == set(order):
+    stars = starss
+    order = ['''Dough: Normal
+Sauce: Alfredo
+Cheese: Feta
+Toppings: Pineapple
+    ''', '''Dough: Gluten Free
+Sauce: Alfredo
+Cheese: Mozzerella
+Toppings: Peppers
+''','''Dough: Sourdough
+Sauce: White
+Cheese: Goat
+Toppings: Pineapple
+''', '''Dough: Sourdough
+Sauce: Pesto
+Cheese: Mozzerella
+Toppings: Peppers
+''','''Dough: High Rise
+Sauce: Spicy Red
+Cheese: American
+Toppings: Ham
+''','''Dough: Sourdough
+Sauce: Alfredo
+Cheese: Pepper Jack
+Toppings: Mystery Meat
+''','''Dough: Sourdough
+Sauce: Pesto
+Cheese: Mozzerella
+Toppings: Pepperoni
+''','''Dough: Gluten Free
+Sauce: White
+Cheese: Goat
+Toppings: Meatball
+''','''Dough: Keto
+Sauce: Pesto
+Cheese: Pepper Jack
+Toppings: More Cheese
+''','''Dough: Normal
+Sauce: Spicy Red
+Cheese: Feta
+Toppings: Meatball
+''']
+    answer = 0
+    ord = random.choice (order)
+    if ord == order[0]:
+        answer = 14
+    elif ord == order[1]:
+        answer = 12
+    elif ord == order[2]:
+        answer = 19
+    elif ord == order[3]:
+        answer = 14
+    elif ord == order[4]:
+        answer = 9
+    elif ord == order[5]:
+        answer = 18
+    elif ord == order[6]:
+        answer = 11
+    elif ord == order[7]:
+        answer = 18
+    elif ord == order[8]:
+        answer = 25
+    elif ord == order[9]:
+        answer = 13
+    o =input ("Here are your ingredients:\nDoughs:High Rise (1), Normal (2), Sourdough (3), Gluten Free (4), Keto (5)\nSauces: Alfredo (1), Spicy Red (2), White (3), Pesto (4)\nCheeses: American (1), Feta (2), Mozzerella (3), Goat (4), Bleu (5), Pepper Jack (6)\nToppings: Pepperoni (1), Anchovies (2), Olives (3), Peppers (4), Ham (5),\n Sausage (6), Meatball (7), Mystery Meat (8), Pineapple (9), More cheese (10)")
+    if set(ord) == set(order):
         print ("Correct order! +🌟!")
         stars += 1
         print ("You have " + str(stars) + " stars!")
@@ -26,7 +81,7 @@ def get_order():
         print ("You have " + str(stars) + " stars.")
 
     if stars == 10:
-        print("Py's Pizza Pies made it to 30 stars! Your small buisiness becomes a national favorite restraunt.\nNOW YOU OWN A BEEEEESSSSNIIIIISSS\nThe End.")
+        print("Py's Pizza Pies made it to 10 stars! Your small buisiness becomes a national favorite restraunt.\nNOW YOU OWN A BEEEEESSSSNIIIIISSS\nThe End.")
     elif stars == 0:
         print("Py's Pizza Pies lost all of their positive reviews, and as a result, was forced to shut down.\nThe End.")
     get_order()
