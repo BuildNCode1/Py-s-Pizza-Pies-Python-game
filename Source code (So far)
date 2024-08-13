@@ -5,36 +5,40 @@ dough = ["High Rise", "Normal", "Sourdough", "Gluten Free", "Keto"]
 sauce = ["Alfredo", "Spicy Red", "White", "Pesto"]
 cheese = ["American", "Feta", "Mozzerella", "Goat", "Bleu", "Pepper Jack"]
 toppings = ["Pepperoni", "Anchovies", "Olives","Peppers","Ham","Sausage","Meatball","Mystery Meat","Pineapple","More cheese" ]
-for i in range ():
-    if stars == 0:
-        print ("Py's Pizza Pies™️ went out of buisiness.😭")
-        break
 def get_order():
+    stars= stars
+    print (stars)
     odough =random.choice(dough)
     osauce =random.choice(sauce)
     ocheese =random.choice(cheese)
     otoppings = random.choice(toppings)
-    print("\n\nOrder up!\nDough: " + random.choice(odough) +"\nSauce: "+ random.choice(osauce) +"\nCheese: "+ random.choice(ocheese) +"\nToppings: "+ random.choice (otoppings) + "\n")
-    order = [odough,osauce,ocheese,otoppings]
+    print("\n\nOrder up!\nDough: " + odough +"\nSauce: "+ osauce +"\nCheese: "+ ocheese +"\nToppings: "+ otoppings + "\n")
+    order = odough,osauce,ocheese,otoppings
+    print (order)
     o = input()
-    if o == order:
+    if set(o) == set(order):
         print ("Correct order! +🌟!")
-        stars = stars + 1
+        stars += 1
         print ("You have " + str(stars) + " stars!")
     else:
         print ("Incorrect order. -🌟!")
-        stars = stars - 1
+        stars -= 1
         print ("You have " + str(stars) + " stars.")
+
+    if stars == 10:
+        print("Py's Pizza Pies made it to 30 stars! Your small buisiness becomes a national favorite restraunt.\nNOW YOU OWN A BEEEEESSSSNIIIIISSS\nThe End.")
+    elif stars == 0:
+        print("Py's Pizza Pies lost all of their positive reviews, and as a result, was forced to shut down.\nThe End.")
+    get_order()
 def tut():
-    print("You'll have 1 minute to complete the pizza correctly.\nIf the pizza is incorrect, we will lose a star.\nMake it correcly, and we gain a star!\nWe are currently at 5 stars.\n Fill out the order by typing the ingredients.")
+    print("You'll have 1 minute to complete the pizza correctly.\nIf the pizza is incorrect, we will lose a star.\nMake it correcly, and we gain a star!\nWe are currently at 5 stars.\nFill out the order by typing the ingredients.")
     time.sleep(15)
     print("Every time someone orders a pizza, an order form will come in, like this!")
+    print ("After you've read the order, make the pizza!")
     get_order()
-    time.sleep(5)
-    print ("Now that you've read the order, make the pizza!")
 print("Hello, and welcome to Py's Pizza Pies™️!")
 input("Wait. Aren't you the new chef?\n")
-print("You are? Then what are you doing out here in the back of the pizzaria?")
+print("You are? Then what are you doing out here in the back of the pizzeria?")
 time.sleep(2)
 print("Come on, we gotta get you into the kitchen!\n(Running noises)")
 for i in range (random.randint(4,7)):
@@ -42,6 +46,20 @@ for i in range (random.randint(4,7)):
     time.sleep(1)
 print("Alright, here we are. The kitchen.")
 time.sleep(2)
-tutorial = input ("Do you want me to teach you the ropes?")
-if tutorial == "y" or "yes" or "ok":
+tutorial = input ("Do you want me to teach you the ropes?\n")
+if tutorial == "y":
     tut()
+else:
+    print("Ok then, What are you standing around here for?")
+    time.sleep (1)
+    print("(You point out to Py that you are already in the kitchen.)")
+    time.sleep(1.5)
+    print("Ah.")
+    time.sleep(3)
+    print("Yes. Ok then. MAKE PIZZAS!!!! 🍕🍕🍕")
+    get_order()
+
+#for i in range():
+    #if stars == 0:
+        #print ("Py's Pizza Pies™️ went out of buisiness.😭")
+        #break
